@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Flash Cards</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+   
+    <style>
+
+        body {
+            display: flex;
+            justify-content: center;
+        }
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: lightblue;
+            border: solid rgb(152, 152, 214) 2px;
+            border-radius: 25px;;
+            height: 200px;
+            width: 150px;
+            margin: 10px;
+        }
+        #container {
+            display: flex;
+            flex-wrap: wrap;
+            height: 500px;
+            width: 600px;
+        }
+
+        input {
+            width: 100px;
+            height: fit-content;
+            text-align: center;
+            border-radius: 25px;
+        }
+        
+        p {
+            font-size: 50px;
+        }
+    </style>
+    
+</head>
+<body>
+    <div id = "container">
+        <div id = "one" class = "card">
+            <p class = "number">1</p>
+            <input id = "input1" type = "text" value = "" maxlength = "10">
+        </div>
+        <div id = "two" class = "card">
+            <p class = "number">2</p>
+            <input id = "input2" type = "text" value = "" maxlength = "10">
+        </div>
+        <div id = "three" class = "card">
+            <p class = "number">3</p>
+            <input id = "input3" type = "text" value = "" maxlength = "10">
+        </div>
+        <div id = "four" class = "card">
+            <p class = "number">4</p>
+            <input id = "input4" type = "text" value = "" maxlength = "10">
+        </div>
+        <div id = "five" class = "card">
+            <p class = "number">5</p>
+            <input id = "input5" type = "text" value = "" maxlength = "10">
+        </div>
+        <div id = "six" class = "card">
+            <p class = "number">6</p>
+            <input id = "input6" type = "text" value = "" maxlength = "10">
+        </div>
+    </div>
+
+
+    <script>
+        let input1 = document.getElementById("input1");
+        let card1 = document.getElementById("one");
+
+        let input2 = document.getElementById("input2");
+        let card2 = document.getElementById("two");
+
+        let input3 = document.getElementById("input3");
+        let card3 = document.getElementById("three");
+
+        let input4 = document.getElementById("input4");
+        let card4 = document.getElementById("four");
+
+        let input5 = document.getElementById("input5");
+        let card5 = document.getElementById("five");
+
+        let input6 = document.getElementById("input6");
+        let card6 = document.getElementById("six");
+
+        function checkAnswer1() {
+            if (input1.value === "one") {
+                card1.style.background = "#23dca2";
+            } else {
+                card1.style.background = "#E9838E";
+            }
+        }
+
+        function checkAnswer2() {
+            if (input2.value === "two") {
+                card2.style.background = "#23dca2";
+            } else {
+                card2.style.background = "#E9838E";
+            }
+        }
+
+        function checkAnswer3() {
+            if (input3.value === "three") {
+                card3.style.background = "#23dca2";
+            } else {
+                card3.style.background = "#E9838E";
+            }
+        }
+
+        function checkAnswer4() {
+            if (input4.value === "four") {
+                card4.style.background = "#23dca2";
+            } else {
+                card4.style.background = "#E9838E";
+            }
+        }
+
+        function checkAnswer5() {
+            if (input5.value === "five") {
+                card5.style.background = "#23dca2";
+            } else {
+                card5.style.background = "#E9838E";
+            }
+        }
+
+        function checkAnswer6() {
+            if (input6.value === "six") {
+                card6.style.background = "#23dca2";
+            } else {
+                card6.style.background = "#E9838E";
+            }
+        }
+
+        input1.addEventListener("input", checkAnswer1);
+        input2.addEventListener("input", checkAnswer2);
+        input3.addEventListener("input", checkAnswer3);
+        input4.addEventListener("input", checkAnswer4);
+        input5.addEventListener("input", checkAnswer5);
+        input6.addEventListener("input", checkAnswer6);
+    </script>
+
+</body>
+</html>
