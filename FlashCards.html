@@ -10,7 +10,9 @@
 
         body {
             display: flex;
+            flex-direction: column;
             justify-content: center;
+            align-items: center;
         }
         .card {
             display: flex;
@@ -28,7 +30,7 @@
             display: flex;
             flex-wrap: wrap;
             height: 500px;
-            width: 600px;
+            width: 950px;
         }
 
         input {
@@ -41,111 +43,260 @@
         p {
             font-size: 50px;
         }
+
+        .timer {
+            position: relative;
+            top: 3px;
+            left: 5px;
+            width: 640px;
+            height: 44px;
+            background: white;
+            border-radius: 25px;
+            animation: grow 20s linear;
+        }
+
+        .timer-shell {
+            
+            width: 650px;
+            height: 50px;
+            border-radius: 25px;
+            border: blue 2px dotted;
+            background:rgb(152, 152, 214);
+        } 
+
+        @keyframes grow {
+            from {width: 0px;}
+            to {width: 640px;}
+        }
     </style>
     
 </head>
 <body>
+    <h2>Enter lowercase text representing the number shown</h2>
+    <h3>- Flash Cards turn green when correct and red when incorrect -</h3>
     <div id = "container">
-        <div id = "one" class = "card">
+        <div id = "1" class = "card">
             <p class = "number">1</p>
             <input id = "input1" type = "text" value = "" maxlength = "10">
         </div>
-        <div id = "two" class = "card">
+        <div id = "2" class = "card">
             <p class = "number">2</p>
             <input id = "input2" type = "text" value = "" maxlength = "10">
         </div>
-        <div id = "three" class = "card">
+        <div id = "3" class = "card">
             <p class = "number">3</p>
             <input id = "input3" type = "text" value = "" maxlength = "10">
         </div>
-        <div id = "four" class = "card">
+        <div id = "4" class = "card">
             <p class = "number">4</p>
             <input id = "input4" type = "text" value = "" maxlength = "10">
         </div>
-        <div id = "five" class = "card">
+        <div id = "5" class = "card">
             <p class = "number">5</p>
             <input id = "input5" type = "text" value = "" maxlength = "10">
         </div>
-        <div id = "six" class = "card">
+        <div id = "6" class = "card">
             <p class = "number">6</p>
             <input id = "input6" type = "text" value = "" maxlength = "10">
         </div>
+        <div id = "7" class = "card">
+            <p class = "number">7</p>
+            <input id = "input7" type = "text" value = "" maxlength = "10">
+        </div>
+        <div id = "8" class = "card">
+            <p class = "number">8</p>
+            <input id = "input8" type = "text" value = "" maxlength = "10">
+        </div>
+        <div id = "9" class = "card">
+            <p class = "number">9</p>
+            <input id = "input9" type = "text" value = "" maxlength = "10">
+        </div>
+        <div id = "10" class = "card">
+            <p class = "number">10</p>
+            <input id = "input10" type = "text" value = "" maxlength = "10">
+        </div>
     </div>
+    <!--
+    <button id = "toggle-btn">Timer</button>
+    <br>
+    <div class = "timer-shell">
+        <div class = "timer"></div>
+    </div>
+    -->
+
+
+    <!--ADD REFRESH BUTTON TO CLEARN ENTRIES-->
+
 
 
     <script>
         let input1 = document.getElementById("input1");
-        let card1 = document.getElementById("one");
+        let card1 = document.getElementById("1");
 
         let input2 = document.getElementById("input2");
-        let card2 = document.getElementById("two");
+        let card2 = document.getElementById("2");
 
         let input3 = document.getElementById("input3");
-        let card3 = document.getElementById("three");
+        let card3 = document.getElementById("3");
 
         let input4 = document.getElementById("input4");
-        let card4 = document.getElementById("four");
+        let card4 = document.getElementById("4");
 
         let input5 = document.getElementById("input5");
-        let card5 = document.getElementById("five");
+        let card5 = document.getElementById("5");
 
         let input6 = document.getElementById("input6");
-        let card6 = document.getElementById("six");
+        let card6 = document.getElementById("6");
+
+        let input7 = document.getElementById("input7");
+        let card7 = document.getElementById("7");
+
+        let input8 = document.getElementById("input8");
+        let card8 = document.getElementById("8");
+
+        let input9 = document.getElementById("input9");
+        let card9 = document.getElementById("9");
+
+        let input10 = document.getElementById("input10");
+        let card10 = document.getElementById("10");
+
+        let timerButton = document.getElementById("toggle-btn");
+        let timer = document.getElementById
+
+       
 
         function checkAnswer1() {
-            if (input1.value === "one") {
+            if (input1.value === "") {
+                card1.style.background = "lightblue";
+            } else {
+                if (input1.value === "one") {
                 card1.style.background = "#23dca2";
             } else {
                 card1.style.background = "#E9838E";
-            }
+            }        
         }
-
+    }
+    
         function checkAnswer2() {
-            if (input2.value === "two") {
+            if (input2.value === "") {
+                card2.style.background = "lightblue";
+            } else {
+                if (input2.value === "two") {
                 card2.style.background = "#23dca2";
             } else {
                 card2.style.background = "#E9838E";
-            }
+            }        
         }
+    }
 
         function checkAnswer3() {
-            if (input3.value === "three") {
+            if (input3.value === "") {
+                card3.style.background = "lightblue";
+            } else {
+                if (input3.value === "three") {
                 card3.style.background = "#23dca2";
             } else {
                 card3.style.background = "#E9838E";
-            }
+            }        
         }
+    }
 
         function checkAnswer4() {
-            if (input4.value === "four") {
+            if (input4.value === "") {
+                card4.style.background = "lightblue";
+            } else {
+                if (input4.value === "four") {
                 card4.style.background = "#23dca2";
             } else {
                 card4.style.background = "#E9838E";
-            }
+            }        
         }
+    }
 
         function checkAnswer5() {
-            if (input5.value === "five") {
+            if (input5.value === "") {
+                card5.style.background = "lightblue";
+            } else {
+                if (input5.value === "five") {
                 card5.style.background = "#23dca2";
             } else {
                 card5.style.background = "#E9838E";
-            }
+            }        
         }
+    }
 
         function checkAnswer6() {
-            if (input6.value === "six") {
+            if (input6.value === "") {
+                card6.style.background = "lightblue";
+            } else {
+                if (input6.value === "six") {
                 card6.style.background = "#23dca2";
             } else {
                 card6.style.background = "#E9838E";
-            }
+            }        
         }
+    }
 
+        function checkAnswer7() {
+            if (input7.value === "") {
+                card7.style.background = "lightblue";
+            } else {
+                if (input7.value === "seven") {
+                card7.style.background = "#23dca2";
+            } else {
+                card7.style.background = "#E9838E";
+            }        
+        }
+    }
+
+        function checkAnswer8() {
+            if (input8.value === "") {
+                card8.style.background = "lightblue";
+            } else {
+                if (input8.value === "eight") {
+                card8.style.background = "#23dca2";
+            } else {
+                card8.style.background = "#E9838E";
+            }        
+        }
+    }
+
+        function checkAnswer9() {
+            if (input9.value === "") {
+                card9.style.background = "lightblue";
+            } else {
+                if (input9.value === "nine") {
+                card9.style.background = "#23dca2";
+            } else {
+                card9.style.background = "#E9838E";
+            }        
+        }
+    }
+
+        function checkAnswer10() {
+            if (input10.value === "") {
+                card10.style.background = "lightblue";
+            } else {
+                if (input10.value === "ten") {
+                card10.style.background = "#23dca2";
+            } else {
+                card10.style.background = "#E9838E";
+            }        
+        }
+    }
+    
         input1.addEventListener("input", checkAnswer1);
         input2.addEventListener("input", checkAnswer2);
         input3.addEventListener("input", checkAnswer3);
         input4.addEventListener("input", checkAnswer4);
         input5.addEventListener("input", checkAnswer5);
         input6.addEventListener("input", checkAnswer6);
+        input7.addEventListener("input", checkAnswer7);
+        input8.addEventListener("input", checkAnswer8);
+        input9.addEventListener("input", checkAnswer9);
+        input10.addEventListener("input", checkAnswer10);
+        
+        
     </script>
 
 </body>
