@@ -14,6 +14,22 @@
             justify-content: center;
             align-items: center;
         }
+
+        button {
+            position: relative;
+            left: -43px;
+            border-radius: 25px;
+            height: 50px;
+            width: 100px;
+        }
+
+        button:hover {
+            animation: sweepRight 2s linear;
+        }
+
+        @keyframes sweepRight {
+            from {background: #E9838E};
+        }
         .card {
             display: flex;
             flex-direction: column;
@@ -64,6 +80,12 @@
             background:rgb(152, 152, 214);
         } 
 
+        .title {
+            position: relative;
+            text-align: center;
+            left: -35px;
+        }
+
         @keyframes grow {
             from {width: 0px;}
             to {width: 640px;}
@@ -72,50 +94,54 @@
     
 </head>
 <body>
-    <h2>Enter lowercase text representing the number shown</h2>
-    <h3>- Flash Cards turn green when correct and red when incorrect -</h3>
+    <div class = "title">
+        <h2>Enter lowercase text representing the number shown</h2>
+        <h3>- Flash Cards turn green when correct and red when incorrect -</h3>
+    </div>
     <div id = "container">
         <div id = "1" class = "card">
             <p class = "number">1</p>
-            <input id = "input1" type = "text" value = "" maxlength = "10">
+            <input id = "input1" class = "entry" type = "text" value = "" maxlength = "10">
         </div>
         <div id = "2" class = "card">
             <p class = "number">2</p>
-            <input id = "input2" type = "text" value = "" maxlength = "10">
+            <input id = "input2" class = "entry" type = "text" value = "" maxlength = "10">
         </div>
         <div id = "3" class = "card">
             <p class = "number">3</p>
-            <input id = "input3" type = "text" value = "" maxlength = "10">
+            <input id = "input3" class = "entry"  type = "text" value = "" maxlength = "10">
         </div>
         <div id = "4" class = "card">
             <p class = "number">4</p>
-            <input id = "input4" type = "text" value = "" maxlength = "10">
+            <input id = "input4" class = "entry"  type = "text" value = "" maxlength = "10">
         </div>
         <div id = "5" class = "card">
             <p class = "number">5</p>
-            <input id = "input5" type = "text" value = "" maxlength = "10">
+            <input id = "input5" class = "entry"  type = "text" value = "" maxlength = "10">
         </div>
         <div id = "6" class = "card">
             <p class = "number">6</p>
-            <input id = "input6" type = "text" value = "" maxlength = "10">
+            <input id = "input6" class = "entry"  type = "text" value = "" maxlength = "10">
         </div>
         <div id = "7" class = "card">
             <p class = "number">7</p>
-            <input id = "input7" type = "text" value = "" maxlength = "10">
+            <input id = "input7" class = "entry"  type = "text" value = "" maxlength = "10">
         </div>
         <div id = "8" class = "card">
             <p class = "number">8</p>
-            <input id = "input8" type = "text" value = "" maxlength = "10">
+            <input id = "input8" class = "entry"  type = "text" value = "" maxlength = "10">
         </div>
         <div id = "9" class = "card">
             <p class = "number">9</p>
-            <input id = "input9" type = "text" value = "" maxlength = "10">
+            <input id = "input9" class = "entry"  type = "text" value = "" maxlength = "10">
         </div>
         <div id = "10" class = "card">
             <p class = "number">10</p>
-            <input id = "input10" type = "text" value = "" maxlength = "10">
+            <input id = "input10" class = "entry"  type = "text" value = "" maxlength = "10">
         </div>
     </div>
+    <br>
+    <button id = "reset">Clear Entries</button>
     <!--
     <button id = "toggle-btn">Timer</button>
     <br>
@@ -125,11 +151,9 @@
     -->
 
 
-    <!--ADD REFRESH BUTTON TO CLEARN ENTRIES-->
-
-
 
     <script>
+
         let input1 = document.getElementById("input1");
         let card1 = document.getElementById("1");
 
@@ -160,11 +184,19 @@
         let input10 = document.getElementById("input10");
         let card10 = document.getElementById("10");
 
-        let timerButton = document.getElementById("toggle-btn");
-        let timer = document.getElementById
+        //Below is related to reset button
+        let entries = document.querySelectorAll(".entry");
+        let cards = document.querySelectorAll(".card");
+        let resetBtn = document.getElementById("reset");
 
+        function clearEntries() {
+            entries.forEach(entry => entry.value = "");
+            cards.forEach(card => card.style.background = "lightblue");
+        }
        
-
+        resetBtn.addEventListener("click", clearEntries);
+       
+        //Below is related to flashcard functionality
         function checkAnswer1() {
             if (input1.value === "") {
                 card1.style.background = "lightblue";
