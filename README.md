@@ -7,11 +7,10 @@ Studying can be difficult or even boring. But these flash cards can help with th
 
 Updates:
 
-1. Added 4 more cards making 10 total
-2. Cards now turn back to default blue when entries are cleared
+1. Added reset button to clear entries
 
 Potential Future Updates:
 
 1. Add timer and point system
 2. Flash cards change order everytime page is refreshed
-3. Reset button to clear entries.
+
