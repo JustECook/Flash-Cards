@@ -11,6 +11,5 @@ Updates:
 
 Potential Future Updates:
 
-1. Add timer and point system
-2. Flash cards change order everytime page is refreshed
+1. Flash cards change order everytime page is refreshed
 
